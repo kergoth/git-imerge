@@ -60,11 +60,11 @@ Requirements
 
 * A Python interpreter; either
 
+  * Python 3.x, version 3.3 or later.
+
   * Python 2.x, version 2.6 or later.  If you are using Python
     2.6.x, then you have to install the ``argparse`` module yourself,
     as it was only added to the standard library in Python 2.7.
-
-  * Python 3.x, version 3.3 or later.
 
   The script tries to use a Python interpreter called ``python`` in
   your ``PATH``.  If your Python interpreter has a different name or
