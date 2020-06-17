@@ -6,20 +6,6 @@ from setuptools import setup
 with open("README.rst", "r") as fh:
     long_description = fh.read()
 
-data_files = []
-try:
-    completionsdir = subprocess.check_output(
-        ["pkg-config", "--variable=completionsdir", "bash-completion"]
-    )
-except OSError as e:
-    if e.errno != errno.ENOENT:
-        raise
-else:
-    completionsdir = completionsdir.strip().decode('utf-8')
-    if completionsdir:
-        data_files.append((completionsdir, ["completions/git-imerge"]))
-
-
 setup(
     name="git-imerge",
     description="Incremental merge for git",
@@ -31,7 +17,6 @@ setup(
     long_description_content_type="text/x-rst",
     license="GPLv2+",
     py_modules=["gitimerge"],
-    data_files=data_files,
     entry_points={"console_scripts": ["git-imerge = gitimerge:climain"]},
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
     classifiers=[
